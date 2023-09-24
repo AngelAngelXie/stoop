@@ -15,7 +15,7 @@ app.use('/uploads', express.static(__dirname+'/uploads'));
 
 app.use(cors({
     credentials: true,
-    origin: 'http://localhost:5173',
+    origin: 'http://localhost:5174',
 }));
 
 mongoose.connect('mongodb+srv://stoopt:4wwzhLDksPWg5Ydt@stoopt.dig8phs.mongodb.net/?retryWrites=true&w=majority');
@@ -27,11 +27,11 @@ app.get('/testing', (req, res) => {
 app.post('/item', async (req, res) => {
     try{
         const {
-            myTitle, myLocation, addedPhotos, myDescription
+            myTitle, myLocation, myLng, myLat, addedPhotos, myDescription
         } = req.body;
 
         const itemDoc = await Item.create({
-            myTitle, myLocation, addedPhotos, myDescription
+            myTitle, myLocation, myLng, myLat, addedPhotos, myDescription
         });
         res.json(itemDoc);
     } catch(e) {
