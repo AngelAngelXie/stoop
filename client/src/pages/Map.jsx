@@ -1,24 +1,44 @@
-import { useMemo } from "react";
-import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
+import React from "react";
+import axios from "axios";
+import GoogleMapReact from 'google-map-react';
+import { useState, useEffect } from "react";
 
-export default function Map() {
-  const { isLoaded } = useLoadScript({
-    googleMapsApiKey: 'AIzaSyBhugTV_plQlisSrFStXbzR7VLfz_eJMtM',
-  });
+export default function Map(){
+  const [items, setItems] = useState([]);
+  const center =  {lat: 40.8075, lng: -73.9626}
+  const zoom = 13;
 
-  if (!isLoaded) return <div>Loading...</div>;
-  return <ActualMap />;
-}
-
-function ActualMap() {
-  const center = useMemo(() => ({ lat: 12, lng: 12 }), []);
+  useEffect(() => {
+        axios.get('/item').then(response => {
+            setItems(response.data);
+        });
+  }, []);
+    
+    const renderMarkers = (map, maps, item) => {
+        console.log(item.myLat);
+        
+        let marker = new maps.Marker({
+            position: {lat: Number(item?.myLat), lng: Number(item?.myLng)},
+            map,
+        });
+        return marker;
+    };
 
   return (
-    <div className="w-fit h-fit top-0">
-        <GoogleMap zoom={10} center={center} mapContainerClassName="map-container ">
-             {/* <Marker position={center} /> */}
-        </GoogleMap>
+    <div style={{ height: '100vh', width: '100%' }}>
+      <GoogleMapReact
+        bootstrapURLKeys={{ key: "AIzaSyBhugTV_plQlisSrFStXbzR7VLfz_eJMtM" }}
+        defaultCenter={center}
+        defaultZoom={zoom}
+        yesIWantToUseGoogleMapApiInternals
+        onGoogleApiLoaded={({ map, maps }) => {
+            items?.map((item) => {
+                renderMarkers(map, maps, item);
+            });
+        }}
+      >
+        
+      </GoogleMapReact>
     </div>
-    
   );
 }

@@ -1,13 +1,21 @@
 import axios from "axios";
 import { useState } from "react";
+import { Navigate } from "react-router-dom";
 import PhotosUploader from "../PhotosUploader.jsx";
 
 export default function AddItemPage() {
 
   const [myTitle,setMyTitle] = useState('');
   const [myLocation,setMyLocation] = useState('');
+  const [myLng, setMyLng] = useState(0.00);
+  const [myLat, setMyLat] = useState(0.00);
   const [addedPhotos,setAddedPhotos] = useState([]);
   const [myDescription,setMyDescription] = useState('');
+  const [redirect, setRedirect] = useState(false);
+
+  if(redirect) {
+    return <Navigate to={'/'} />
+  }
 
   async function saveItem(ev) {
     ev.preventDefault();
@@ -15,10 +23,13 @@ export default function AddItemPage() {
       await axios.post('/item', {
           myTitle,
           myLocation,
+          myLng,
+          myLat,
           addedPhotos,
           myDescription
       });
       alert('This item is added successfully');
+      setRedirect(true);
     } catch (e) {
         alert('Failed to add item... Please try again...');
     }
@@ -53,6 +64,12 @@ export default function AddItemPage() {
           
           {preInput('Location Address', 'Please enter the location where you found the item')}
           <textarea type="text" value={myLocation} onChange={ev => setMyLocation(ev.target.value)} placeholder="location, for example: 123 4th street, Santa Barbara... "/>
+
+          {preInput('Longtitude','Please enter the longtitude')}
+          <textarea value={myLng} onChange={ev => setMyLng(ev.target.value)} />
+
+          {preInput('Latitude','Please enter the latitude')}
+          <textarea value={myLat} onChange={ev => setMyLat(ev.target.value)} />
 
           {preInput('Photos','more = better')}
           <PhotosUploader addedPhotos={addedPhotos} onChange={setAddedPhotos} />
