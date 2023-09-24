@@ -1,5 +1,7 @@
 # Stoopt
-This project is created during the 36-hour [DivHacks 2023](https://columbiadivhacks.com/). We created a platform that aims to facilitate stooping, or the act of shopping for and repurposing discarded furnitures, in urban areas. 
+One person's trash is another person's treasure!
+
+This project is created during the 36-hour [DivHacks 2023](https://columbiadivhacks.com/). We are aiming to build a platform that can facilitate stooping, or the act of shopping for and repurposing discarded furnitures, in urban areas. 
 Technologies used include MERN Stack, Google Maps API, Figma, Git, Yarn. 
 
 This web project is meant to be a prototype for our idea. You may find the more complete design for our final product through [this figma project](https://www.figma.com/proto/Z4wzPyBoBwxUVLTx5xG9pi/DivHacks-2023?type=design&node-id=13-407&t=zOD5IGcGhNN4e89v-1&scaling=scale-down&page-id=0%3A1&starting-point-node-id=7%3A18&mode=design).
