@@ -1,66 +1,67 @@
-import {useState} from "react";
 import axios from "axios";
+import { useState } from "react";
+import PhotosUploader from "../PhotosUploader.jsx";
 
 export default function AddItemPage() {
 
-    const [myTitle,setMyTitle] = useState('');
-    const [myLocation,setMyLocation] = useState('');
-    const [myPhotos,setMyPhotos] = useState([]);
-    const [myCondition,setMyCondition] = useState([]);
-    const [myDescription,setMyDescription] = useState('');
+  const [myTitle,setMyTitle] = useState('');
+  const [myLocation,setMyLocation] = useState('');
+  const [addedPhotos,setAddedPhotos] = useState([]);
+  const [myDescription,setMyDescription] = useState('');
 
-    //pass the item information into our api
-    async function saveItem(ev) {
-      ev.preventDefault();
-      const itemData = {
-        myTitle, myLocation, myPhotos, myCondition, myDescription
-      };
-
-      await axios.post('/places', itemData);
+  async function saveItem(ev) {
+    ev.preventDefault();
+    try{
+      await axios.post('/item', {
+          myTitle,
+          myLocation,
+          myDescription
+      });
+      alert('This item is added successfully');
+    } catch (e) {
+        alert('Failed to add item... Please try again...');
     }
-
-    //creates the header and the description for each input section
-    function inputHeader(text) {
-      return (
-        <h2 className="">{text}</h2>
-      );
-    }
-    function inputDescription(text) {
-      return (
-        <p className="">{text}</p>
-      );
-    }
-    function preInput(header,description) {
-      return (
-        <>
-          {inputHeader(header)}
-          {inputDescription(description)}
-        </>
-      );
-    }
-
+  }
+  //creates the header and the description for each input section
+  function inputHeader(text) {
     return (
-        <div>
-            <form onSubmit={saveItem}>
-              {preInput('Title', 'Please enter the title for your item.. :)')}
-              <input type="text" value={myTitle} onChange={ev => setMyTitle(ev.target.value)} placeholder="title, for example: Red Cat Carpet!"/>
-        
-              {preInput('Location Address', 'Please enter the location where you found the item')}
-              <input type="text" value={myLocation} onChange={ev => setMyLocation(ev.target.value)} placeholder="location, for example: 123 4th street, Santa Barbara... "/>
-
-              {preInput('Photos','Please upload pictures for the item. The more the merrier!')}
-              <div>UNDERCONSTRUCTION</div>
-              {/* <PhotosUploader myPhotos={myPhotos} onChange={setMyPhotos} /> */}
-
-              {preInput('Condition', 'Please select the condition of the item. <3')}
-              <div>UNDERCONSTRUCTION</div>
-
-              {preInput('Description', 'Please add a brief description for this item, OR you can let our AI generate the description by clicking the button at the bottom! :3')}
-              <input type="text" value={myDescription} onChange={ev => setMyDescription(ev.target.value)} placeholder="title, for example: Red Cat Carpet!"/>
-
-              <button>Click to Autogenerate a Description!</button>
-            </form>
-        </div>
+      <h2 className="text-2xl mt-4">{text}</h2>
     );
+  }
+  function inputDescription(text) {
+    return (
+      <p className="text-gray-500 text-sm">{text}</p>
+    );
+  }
+  function preInput(header,description) {
+    return (
+      <>
+        {inputHeader(header)}
+        {inputDescription(description)}
+      </>
+    );
+  }
+  //--------------------------------------------------------------
 
+  return (
+    <div className="py-40 px-20">
+      <form onSubmit={saveItem}>
+        <div>
+          {preInput('Title', 'Please enter the title for your item.. :)')}
+          <textarea type="text" value={myTitle} onChange={ev => setMyTitle(ev.target.value)} placeholder="title, for example: Red Cat Carpet!"/>
+          
+          {preInput('Location Address', 'Please enter the location where you found the item')}
+          <textarea type="text" value={myLocation} onChange={ev => setMyLocation(ev.target.value)} placeholder="location, for example: 123 4th street, Santa Barbara... "/>
+
+          {preInput('Photos','more = better')}
+          <PhotosUploader addedPhotos={addedPhotos} onChange={setAddedPhotos} />
+
+          {preInput('Description', 'Please add a brief description for this item :3')}
+          <textarea type="text" value={myDescription} onChange={ev => setMyDescription(ev.target.value)} placeholder="title, for example: Red Cat Carpet!"/>
+        </div>
+        
+        <button className="my-4">Save</button>
+      </form>
+    </div>
+  );
 }
