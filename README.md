@@ -3,6 +3,8 @@ This project is created during the 36-hour [DivHacks 2023](https://columbiadivha
 Technologies used include MERN Stack, Google Maps API, Figma, Git, Yarn. 
 
 This web project is meant to be a prototype for our idea. You may find the more complete design for our final product through [this figma project](https://www.figma.com/proto/Z4wzPyBoBwxUVLTx5xG9pi/DivHacks-2023?type=design&node-id=13-407&t=zOD5IGcGhNN4e89v-1&scaling=scale-down&page-id=0%3A1&starting-point-node-id=7%3A18&mode=design).
+![image](https://github.com/AngelAngelXie/stoop/assets/78315342/a49b47f7-85f2-41d8-9b33-1f04cd58ee84)
+
 
 # How to Use This Repo
 When you are in the directory /stoop, run the following commands:
@@ -25,5 +27,4 @@ We hope to continue improve this project to better serve the community. This not
 # Video Demo
 https://youtu.be/yAMJHRa32Lo
 
-![image](https://github.com/AngelAngelXie/stoop/assets/78315342/62c02d00-db92-4d99-8d95-f428326f0d70)
-![image](https://github.com/AngelAngelXie/stoop/assets/78315342/549ba5fc-dcf3-4c53-8106-82fbe47bfb23)
+
