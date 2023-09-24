@@ -15,6 +15,7 @@ export default function AddItemPage() {
       await axios.post('/item', {
           myTitle,
           myLocation,
+          addedPhotos,
           myDescription
       });
       alert('This item is added successfully');

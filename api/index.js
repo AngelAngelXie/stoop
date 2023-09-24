@@ -27,11 +27,11 @@ app.get('/testing', (req, res) => {
 app.post('/item', async (req, res) => {
     try{
         const {
-            myTitle, myLocation, myDescription
+            myTitle, myLocation, addedPhotos, myDescription
         } = req.body;
 
         const itemDoc = await Item.create({
-            myTitle, myLocation, myDescription
+            myTitle, myLocation, addedPhotos, myDescription
         });
         res.json(itemDoc);
     } catch(e) {
@@ -63,7 +63,9 @@ app.post('/upload', photosMiddleware.array('photos', 100), (req, res) => {
     res.json(uploadedFiles);
 });
 
-
+app.get('/item', async (req, res) => {
+    res.json( await Item.find() );
+});
 
 
 app.listen(4000);
