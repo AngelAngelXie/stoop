@@ -23,7 +23,7 @@ We hope to continue improve this project to better serve the community. This not
 - Receiving constant updates regarding the item's status is important in stooping. We hope to be able to add voting buttons that will allow other users to verify the condition of the item in the post. This way, anyone walking pass the same item may be able to verify the validity of the post's information and update the current status of the item. 
 - Taking advantage of image-to-text generation AI model as well as keywords entered by users, we can autogenerate a short description for each featured item. This would help us save user's time from synthesizing their own description, thereby making posting a simpler and more convient experience for users.
 - Utilizing Google Maps's Places API and Geocoding API to integration autocompletion of addresses and automatic extraction of the address's latitude and longitude.
-- Adding a wishlist feature where users can enter in items that they are hoping to find. When an item nearby matches with the user's wishlist, we can notify the user about the stopping opportunity.
+- Adding a wishlist feature where users can enter in items that they are hoping to find. When an item nearby matches with the user's wishlist, we can notify the user about the stooping opportunity.
 - Promoting the stooping community by allowing users to share their stooping experience - good or bad. They may write short posts about their tips and tricks. Or, they may also share photos or videos of how they are able to reutilize the items they stooped, which can offer design guides and inspirations to others.
 
 
