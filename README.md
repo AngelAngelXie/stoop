@@ -4,9 +4,9 @@ One person's trash is another person's treasure!
 This project is created during the 36-hour [DivHacks 2023](https://columbiadivhacks.com/). We are aiming to build a platform that can facilitate stooping, or the act of shopping for and repurposing discarded furnitures, in urban areas. 
 Technologies used include MERN Stack, Google Maps API, Figma, Git, Yarn. 
 
-This web project is meant to be a prototype for our idea. You may find the more complete design for our final product through [this figma project](https://www.figma.com/proto/Z4wzPyBoBwxUVLTx5xG9pi/DivHacks-2023?type=design&node-id=13-407&t=zOD5IGcGhNN4e89v-1&scaling=scale-down&page-id=0%3A1&starting-point-node-id=7%3A18&mode=design).
-![image]()
+This web project is meant to be a prototype for our idea. You may find the more complete design for our final product through [this figma project](https://www.figma.com/proto/Z4wzPyBoBwxUVLTx5xG9pi/DivHacks-2023?type=design&node-id=13-407&t=zOD5IGcGhNN4e89v-1&scaling=scale-down&page-id=0%3A1&starting-point-node-id=7%3A18&mode=design). Here is a [user flowchart](https://www.figma.com/file/DyVYfjF9hu88kyoSLM35Hd/User-flow-Chart-DivHacks-2023?type=whiteboard&node-id=0%3A1&t=Mya3IBmhfM4lQp8r-1) for our project prototype.
 
+![image](https://github.com/AngelAngelXie/stoop/assets/78315342/d6b280a7-b24c-42c9-8a63-8783f95dafbf)
 
 # How to Use This Repo
 When you are in the directory /stoop, run the following commands:
