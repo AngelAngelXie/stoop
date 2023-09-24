@@ -9,7 +9,7 @@ When you are in the directory /stoop, run the following commands:
 `cd api`,`nodemon index.js`. Then, run `cd ../client`, `yarn && yarn dev`. Then, you may be able to interact with the web application through `localhost:5174`. 
 
 # Inspiration
-We recieved our initial inspiration from the instagram account [stoopingnyc](https://www.instagram.com/stoopingnyc/?hl=en). Since its creation, the account has attracted 460K followers and have featured nearly 18K discarded items around NYC. We were very inspired by the idea of stooping as well as the commitment of the account owner. 
+We recieved our initial inspiration from the instagram account [stoopingnyc](https://www.instagram.com/stoopingnyc/?hl=en). Since its creation, the account has attracted over 460K followers and have featured nearly 18K discarded items around NYC. We were very inspired by the idea of stooping as well as the commitment of the account owner. 
 
 Therefore, we created this project in hope to add to their effort. Specifically, we know that constantly sorting through private messages and updating the platform can be a lot of work and time consuming. So we decided to build this web application, which we hope can provide more up-to-date, and more easily-accessed information on stooping opportunities. Our end goal is to reduce waste, to promote affordable furniture, to encourage up-cyling trash, and more importantly, to connect and promote the stooping community.
 
