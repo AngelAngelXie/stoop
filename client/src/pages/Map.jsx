@@ -27,7 +27,7 @@ export default function Map(){
   return (
     <div style={{ height: '100vh', width: '100%' }}>
       <GoogleMapReact
-        bootstrapURLKeys={{ key: "AIzaSyBhugTV_plQlisSrFStXbzR7VLfz_eJMtM" }}
+        bootstrapURLKeys={{ key: "PLEASE SUBSTITUTDE AN GOOGLE CLOUD API KEY HERE" }}
         defaultCenter={center}
         defaultZoom={zoom}
         yesIWantToUseGoogleMapApiInternals
